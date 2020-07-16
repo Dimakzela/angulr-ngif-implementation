@@ -2,9 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <div *appMyNgIf=condition>
+      Loading...
+    </div>
+    <button (click)="condition = !condition">Show/Hide</button>
+  `,
 })
 export class AppComponent {
-  title = 'ngif-directive';
+  condition = true;
 }
